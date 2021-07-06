@@ -4,7 +4,7 @@ const potoPropil = ['fp1', 'fp2', 'fp3']
 
 const createRestaurantDetailTemplate = (data) => `
     <div class="restaurant-info-header" style="position: relative;">
-        <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + data.restaurant.pictureId}" style="object-fit: cover;
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + data.restaurant.pictureId}" style="object-fit: cover;
         width: 100%;
         height: 74vh;
         filter: brightness(70%);" alt="background of ${data.restaurant.name} detail">
@@ -80,7 +80,7 @@ const createRestaurantDetailTemplate = (data) => `
                     <h4 style="margin: 0;"><span style="display: inline-block;
                     height: 32px;
                     width: 16px;
-                }"><img src="./images/${potoPropil[Math.floor(Math.random() * potoPropil.length)]}.png" style="width: 27px;
+                }"><img class="lazyload" data-src="./images/${potoPropil[Math.floor(Math.random() * potoPropil.length)]}.png" style="width: 27px;
                     margin: 11px -12px;border-radius: 50%;" alt="Photo profile of ${review.name}"></span> ${review.name} said :</h4>
                     <p style="margin: 0;
                     padding-left: 18px;
@@ -129,7 +129,7 @@ const createRestaurantDetailTemplate = (data) => `
 
 const createItemRecommendedRestaurantTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
         <div class="info">
             <h4 style="margin: 12px 0;font-size: 1.2rem;"><a href="${`/#/detailrestaurant/${restaurant.id}`}" style="color:#d72323;color: #d72323;font-size: 1.2em;
             padding: 8px 50px 12px 0;">${restaurant.name}</a></h4>
@@ -162,7 +162,7 @@ const createItemRecommendedRestaurantTemplate = (restaurant) => `
 
 const createFavRestaurantItemTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
         <div class="info">
             <h4 style="margin: 12px 0;font-size: 1.2rem;"><a href="${`/#/detailrestaurant/${restaurant.id}`}" style="color:#d72323;">${restaurant.name}</a></h4>
             <p>Rating : <span id="star1for${restaurant.id}"><i class="fas fa-star"></i></span>
@@ -206,7 +206,7 @@ const createIDontlovethisrestaurantanymoreButton = () => `
 
 const createErrorElement = (error, img) => `
     <div style="text-align: center;margin: 0 33px;">
-        <img src="./images/${img}.gif" style="
+        <img class="lazyload" data-src="./images/${img}.gif" style="
             width: 100%;
             max-width: 56%;
             margin: auto;

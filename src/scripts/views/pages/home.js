@@ -7,7 +7,11 @@ const Home = {
     return `
         <section class="hero-element">
             <div class="jumbotron">
-                <img class="jumbotron-img" src="./images/heros/hero-image_2.jpg" alt="">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
+                  <img class="jumbotron-img lazyload" data-src="./images/heros/hero-image_2-large.jpg" alt="landing page image background"/>
+                </picture>
+                
                 <div class="jumbotron-inelement">
                     <h2>Feel Hungry m8?</h2>
                     <p>Type something below, u'll find the restaurant nearby in a milisecond! </p>

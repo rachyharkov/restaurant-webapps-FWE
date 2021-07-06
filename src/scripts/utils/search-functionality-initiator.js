@@ -37,7 +37,7 @@ const SearchBoxInitiator = {
         datanya.restaurants.forEach((restaurant) => {
           searchList = `
                     <div id="search-result-${datake}">
-                        <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" style="width: 100%;margin-top: 8px;"/>
+                        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" style="width: 100%;margin-top: 8px;"/>
                     </div>
                     <div id="search-result-${datake}-detail" style='line-height: 2;text-align: left;padding-left: 38px;'>
                         <a href="${`/#/detailrestaurant/${restaurant.id}`}" style="font-weight: bold; color: #d72323;">${restaurant.name}</a>

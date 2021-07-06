@@ -2,7 +2,7 @@ const assert = require('assert');
 /* eslint-disable no-undef */
 Feature('Memfavoritkan Restoran')
 
-xScenario('Mem-favoritkan salah satu restoran', async ({ I }) => {
+Scenario('Mem-favoritkan salah satu restoran', async ({ I }) => {
   I.amOnPage('/#/favorite')
 
   I.see('We think you should add some of your favorite restaurant here, or make bread toast perhaps?', '.toasteruwu')
@@ -36,7 +36,7 @@ xScenario('Mem-favoritkan salah satu restoran', async ({ I }) => {
   assert.strictEqual(tampungnamarestoranpertama, telahdifavoritin)
 })
 
-xScenario('Batal menyukai restoran', async ({ I }) => {
+Scenario('Batal menyukai restoran', async ({ I }) => {
   I.amOnPage('/#/favorite')
 
   I.see('We think you should add some of your favorite restaurant here, or make bread toast perhaps?', '.toasteruwu')

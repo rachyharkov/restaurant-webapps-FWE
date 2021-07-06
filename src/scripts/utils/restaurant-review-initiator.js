@@ -50,7 +50,7 @@ const ReviewPostFunctionality = {
       <h4 style="margin: 0;"><span style="display: inline-block;
       height: 32px;
       width: 16px;
-  }"><img src="./images/${potoPropil[Math.floor(Math.random() * potoPropil.length)]}.png" style="width: 27px;
+  }"><img class="lazyload" data-src="./images/${potoPropil[Math.floor(Math.random() * potoPropil.length)]}.png" style="width: 27px;
       margin: 11px -12px;border-radius: 50%;" alt="Photo profile of ${name.value}"></span> ${name.value} said :</h4>
       <p style="margin: 0;
       padding-left: 18px;
