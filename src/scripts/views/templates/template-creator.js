@@ -10,19 +10,8 @@ const createRestaurantDetailTemplate = (data) => `
         filter: brightness(70%);" alt="background of ${data.restaurant.name} detail">
         <div>
             <h2>${data.restaurant.name}</h2>
-            <p style="background-color: #05050599;
-            width: 50%;
-            margin: auto;
-            padding: 10px 10px 0 10px;
-            color: #fefefe;">
-                ${data.restaurant.address}
-            </p>
-            <p style="background-color: #05050599;
-            width: 50%;
-            margin: auto;
-            padding: 9px 10px 10px 10px;
-            color: #fefefe;">${data.restaurant.city}</p>
-
+            <p class="address1">${data.restaurant.address}</p>
+            <p class="address2">${data.restaurant.city}</p>
         </div>
     </div>
     
@@ -129,7 +118,9 @@ const createRestaurantDetailTemplate = (data) => `
 
 const createItemRecommendedRestaurantTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
+        <div class="image-restaurant-wrapper loading-skeleton">
+            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
+        </div>
         <div class="info">
             <h4 style="margin: 12px 0;font-size: 1.2rem;"><a href="${`/#/detailrestaurant/${restaurant.id}`}" style="color:#d72323;color: #d72323;font-size: 1.2em;
             padding: 8px 50px 12px 0;">${restaurant.name}</a></h4>

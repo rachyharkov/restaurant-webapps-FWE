@@ -22,6 +22,7 @@ window.addEventListener('load', () => {
   // ISI SW REGISTER DISINI NTAR
   swRegister()
   // ISI WEBCOCKET DISINI NTAR
+  document.querySelector('.image-restaurant-wrapper').classList.remove("loading-skeleton");
 })
 
 /* homeonfocuselement.onfocus = function() {

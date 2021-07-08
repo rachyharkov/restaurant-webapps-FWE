@@ -50,6 +50,7 @@ const Home = {
       })
       const data = await RestaurantDataSource.RestaurantList()
       elementContainer.innerHTML = ''
+      
       data.restaurants.forEach((restaurant) => {
         elementContainer.innerHTML += createItemRecommendedRestaurantTemplate(restaurant)
         for (let i = 1; i <= Math.trunc(restaurant.rating); i++) {

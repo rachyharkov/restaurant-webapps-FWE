@@ -286,12 +286,10 @@ body > main > section.hero-element > div > div > div > button {
     overflow: hidden;
 }
 
-.restaurant-lists-wrapper > .container-list .restaurant-list img {
+.restaurant-lists-wrapper > .container-list .restaurant-list div img {
     display: block;
-    max-width: 100%;
-    max-height: 170px;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     margin: auto;
 }
 
@@ -540,6 +538,61 @@ body > main > section.hero-element > div > div > div > button {
     45%,80% { opacity: 1; transform:scale(1); }
 }
 
+.address1 {
+    background-color: #05050599;
+    width: 100%;
+    margin: auto;
+    padding: 10px 10px 0 10px;
+    color: #fefefe;
+}
+
+.address2 {
+    background-color: #05050599;
+    width: 100%;
+    margin: auto;
+    padding: 9px 10px 10px 10px;
+    color: #fefefe;
+}
+
+
+/* The loading Class */
+.loading-skeleton {
+    position: relative;
+    background-color: #e2e2e2;
+}
+
+/* The moving element */
+.loading-skeleton::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: -webkit-gradient(linear, left top,right top, from(transparent), color-stop(rgba(255, 255, 255, 0.2)),to(transparent));
+    background: linear-gradient(90deg, transparent,
+            rgba(255, 255, 255, 0.2), transparent);
+
+    /* Adding animation */
+    animation: loading 0.8s infinite;
+}
+
+/* Loading Animation */
+@keyframes loading {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.image-restaurant-wrapper {
+    display: block;
+    max-width: 100%;
+    max-height: 170px;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
 @media screen and (max-width: 678px) {
     #nav-desktop {
         display: none;
@@ -637,6 +690,13 @@ body > main > section.hero-element > div > div > div > button {
         display: none;
     }
     
+    .address1 {
+        padding: 10px 0px 0 0px;
+    }
+
+    .address2 {
+        padding: 9px 0px 10px 0px;
+    }
 
     
 }

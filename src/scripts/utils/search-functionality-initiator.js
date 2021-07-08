@@ -52,6 +52,12 @@ const SearchBoxInitiator = {
         }
       }
     })
+
+    searchbox.addEventListener('focusout', (e) => {
+      searchresultcontainer.innerHTML = ''
+      searchresultcontainer.style.border = ''
+
+    })
   }
 }
 
