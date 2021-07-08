@@ -22,9 +22,12 @@ precacheAndRoute([
   { url: './', revision: '1' }, // alias for index.html
   { url: 'https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap', revision: '1' },
   { url: 'https://use.fontawesome.com/releases/v5.15.3/css/all.css', revision: '1' },
-  { url: './images/no-connection.gif', revision: '1' },
-  { url: './images/not-found.gif', revision: '1' },
-  { url: './images/toasteruwu.gif', revision: '1' }
+  { url: './images/no-connection.webm', revision: '1' },
+  { url: './images/no-connection.mp4', revision: '1' },
+  { url: './images/not-found.webm', revision: '1' },
+  { url: './images/not-found.mp4', revision: '1' },
+  { url: './images/toasteruwu.webm', revision: '1' },
+  { url: './images/toasteruwu.mp4', revision: '1' },
 ], { ignoreURLParametersMatching: [/.*/] })
 
 // Using StaleWhileRevalidate strategy for API (JSON OF /LIST)

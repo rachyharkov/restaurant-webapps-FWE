@@ -32,7 +32,10 @@ const Home = {
             <p>Looking for restaurant instead? here's some recommendation for ya!</p>
             <div class="restaurant-lists-wrapper">
                 <div class="container-list" id="restaurant-lists-container">
-                    <img src="./images/search.gif">
+                    <video autoplay loop muted playsinline>
+                        <source src="./images/search.webm" type="video/webm">
+                        <source src="./images/search.mp4" type="video/mp4">
+                    </video>
                     <p>Finding out what u like ^_^</p>
                 </div>
             </div>
@@ -58,6 +61,15 @@ const Home = {
           document.querySelector('#star' + i + 'for' + restaurant.id).classList.add('checked-star')
         }
       })
+
+      const lazy = function lazy() {
+        document.addEventListener('lazyloaded', function (e)  {
+          // e.target.parentNode.classList.add('image-loaded')
+          e.target.parentNode.classList.remove('loading')
+        })
+      }
+
+      lazy()
     } catch (e) {
       let errorMessage, errorImage
       if (e.message === 'Failed to fetch') {

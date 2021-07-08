@@ -98,6 +98,15 @@ const DetailRestaurant = {
       Array.from(buttonNavDetail).forEach(function (element) {
         element.addEventListener('click', buttonDetailClick)
       })
+
+      var lazy = function lazy() {
+        document.addEventListener('lazyloaded', function (e)  {
+          // e.target.parentNode.classList.add('image-loaded')
+          document.querySelector('.restaurant-info-header').classList.remove('loading')
+        })
+      }
+
+      lazy()
     } catch (error) {
       let errorMessage, errorImage
       if (error.message === 'Failed to fetch') {

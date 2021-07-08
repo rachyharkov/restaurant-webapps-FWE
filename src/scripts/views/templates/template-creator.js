@@ -3,11 +3,11 @@ import CONFIG from '../../globals/config'
 const potoPropil = ['fp1', 'fp2', 'fp3']
 
 const createRestaurantDetailTemplate = (data) => `
-    <div class="restaurant-info-header" style="position: relative;">
-        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + data.restaurant.pictureId}" style="object-fit: cover;
-        width: 100%;
-        height: 74vh;
-        filter: brightness(70%);" alt="background of ${data.restaurant.name} detail">
+    <div class="restaurant-info-header loading" style="position: relative;">
+        <picture>
+            <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + data.restaurant.pictureId}">
+            <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + data.restaurant.pictureId}" style="object-fit: cover;width: 100%;height: 74vh;filter: brightness(70%);" alt="background of ${data.restaurant.name} detail"/>
+        </picture>
         <div>
             <h2>${data.restaurant.name}</h2>
             <p class="address1">${data.restaurant.address}</p>
@@ -69,8 +69,7 @@ const createRestaurantDetailTemplate = (data) => `
                     <h4 style="margin: 0;"><span style="display: inline-block;
                     height: 32px;
                     width: 16px;
-                }"><img class="lazyload" data-src="./images/${potoPropil[Math.floor(Math.random() * potoPropil.length)]}.png" style="width: 27px;
-                    margin: 11px -12px;border-radius: 50%;" alt="Photo profile of ${review.name}"></span> ${review.name} said :</h4>
+                }"><img src="./images/${potoPropil[Math.floor(Math.random() * potoPropil.length)]}.png" width="27px" height="27px" style="margin: 11px -12px;border-radius: 50%;" alt="Photo profile of ${review.name}"></span> ${review.name} said :</h4>
                     <p style="margin: 0;
                     padding-left: 18px;
                     font-size: 12px;">
@@ -118,7 +117,7 @@ const createRestaurantDetailTemplate = (data) => `
 
 const createItemRecommendedRestaurantTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <div class="image-restaurant-wrapper">
+        <div class="image-restaurant-wrapper loading">
             <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
         </div>
         <div class="info">
@@ -153,7 +152,7 @@ const createItemRecommendedRestaurantTemplate = (restaurant) => `
 
 const createFavRestaurantItemTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <div class="image-restaurant-wrapper">
+        <div class="image-restaurant-wrapper loading">
             <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
         </div>
         <div class="info">
@@ -199,12 +198,12 @@ const createIDontlovethisrestaurantanymoreButton = () => `
 
 const createErrorElement = (error, img) => `
     <div style="text-align: center;margin: 0 33px;">
-        <img class="lazyload" data-src="./images/${img}.gif" style="
-            width: 100%;
+        <video autoplay loop muted playsinline style="width: 100%;
             max-width: 56%;
-            margin: auto;
-            object-fit: cover;
-        ">
+            margin: auto;">
+            <source src="./images/${img}.webm" type="video/webm">
+            <source src="./images/${img}.mp4" type="video/mp4">
+        </video>
         <p aria-label="${error}" class="${img}">${error}</p>
     </div>
 `
