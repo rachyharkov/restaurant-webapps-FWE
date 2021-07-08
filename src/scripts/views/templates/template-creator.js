@@ -118,7 +118,7 @@ const createRestaurantDetailTemplate = (data) => `
 
 const createItemRecommendedRestaurantTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <div class="image-restaurant-wrapper loading-skeleton">
+        <div class="image-restaurant-wrapper">
             <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
         </div>
         <div class="info">
@@ -153,7 +153,9 @@ const createItemRecommendedRestaurantTemplate = (restaurant) => `
 
 const createFavRestaurantItemTemplate = (restaurant) => `
     <div class="restaurant-list">
-        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
+        <div class="image-restaurant-wrapper">
+            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Picture of the ${restaurant.name} restaurant in ${restaurant.city}">
+        </div>
         <div class="info">
             <h4 style="margin: 12px 0;font-size: 1.2rem;"><a href="${`/#/detailrestaurant/${restaurant.id}`}" style="color:#d72323;">${restaurant.name}</a></h4>
             <p>Rating : <span id="star1for${restaurant.id}"><i class="fas fa-star"></i></span>

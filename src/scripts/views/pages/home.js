@@ -9,7 +9,7 @@ const Home = {
             <div class="jumbotron">
                 <picture>
                   <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
-                  <img class="jumbotron-img lazyload" src="./images/heros/hero-image_2-large.jpg" alt="landing page image background"/>
+                  <img class="jumbotron-img" src="./images/heros/hero-image_2-large.jpg" alt="landing page image background"/>
                 </picture>
                 
                 <div class="jumbotron-inelement">
