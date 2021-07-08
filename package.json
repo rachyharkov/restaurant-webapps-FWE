@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "test": "karma start",
-    "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js",
-    "build-video": "node build-video.js"
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "Rachmad Nur Hayat <myself@rach-nh.xyz>",
