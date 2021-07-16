@@ -27,7 +27,7 @@ precacheAndRoute([
   { url: './images/not-found.webm', revision: '1' },
   { url: './images/not-found.mp4', revision: '1' },
   { url: './images/toasteruwu.webm', revision: '1' },
-  { url: './images/toasteruwu.mp4', revision: '1' },
+  { url: './images/toasteruwu.mp4', revision: '1' }
 ], { ignoreURLParametersMatching: [/.*/] })
 
 // Using StaleWhileRevalidate strategy for API (JSON OF /LIST)

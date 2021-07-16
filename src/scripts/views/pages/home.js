@@ -53,7 +53,7 @@ const Home = {
       })
       const data = await RestaurantDataSource.RestaurantList()
       elementContainer.innerHTML = ''
-      
+
       data.restaurants.forEach((restaurant) => {
         elementContainer.innerHTML += createItemRecommendedRestaurantTemplate(restaurant)
         for (let i = 1; i <= Math.trunc(restaurant.rating); i++) {
@@ -62,8 +62,8 @@ const Home = {
         }
       })
 
-      const lazy = function lazy() {
-        document.addEventListener('lazyloaded', function (e)  {
+      const lazy = function lazy () {
+        document.addEventListener('lazyloaded', function (e) {
           // e.target.parentNode.classList.add('image-loaded')
           e.target.parentNode.classList.remove('loading')
         })

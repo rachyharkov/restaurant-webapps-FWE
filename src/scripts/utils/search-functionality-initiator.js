@@ -7,6 +7,7 @@ const SearchBoxInitiator = {
     buttonsearch.addEventListener('focus', (e) => {
       searchresultcontainer.style.maxHeight = '0'
       searchresultcontainer.style.border = 'none'
+      searchresultcontainer.style.display = 'none'
     })
 
     searchbox.addEventListener('focus', (e) => {
@@ -16,9 +17,10 @@ const SearchBoxInitiator = {
     })
 
     // lets try using xhr...
-    searchbox.addEventListener('input', (e) => {
+    searchbox.addEventListener('keyup', (e) => {
       searchresultcontainer.style.border = '1px solid rgb(194, 194, 194)'
       searchresultcontainer.style.maxHeight = '140px'
+      searchresultcontainer.style.display = 'grid'
 
       let searchList = ''
 
@@ -51,12 +53,6 @@ const SearchBoxInitiator = {
           document.getElementById('search-results').innerHTML = '<div></div><div><p>😭 Omg, we\'re not finding what u\'re looking for</p></div>'
         }
       }
-    })
-
-    searchbox.addEventListener('focusout', (e) => {
-      searchresultcontainer.innerHTML = ''
-      searchresultcontainer.style.border = ''
-
     })
   }
 }

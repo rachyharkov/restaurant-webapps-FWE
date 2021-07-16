@@ -87,7 +87,7 @@ const createRestaurantDetailTemplate = (data) => `
             </div>
             <div class="add-comment-section" id="addReviewSection">
                 <p style="font-size: 12px; font-weight: bold;">What do you think about ${data.restaurant.name}?</p>
-                <input type="text" id="tbReviewerName" placeholder="What's ur name?" style="width: 100%; margin-bottom: 10px;padding: 10px;
+                <input type="text" id="tbReviewerName" placeholder="What's ur name?" style="width: 100%; margin-bottom: 10px; padding: 3vh 9px;
                 border-radius: 7px; display:none;"/>
                 <textarea id="tbReviewText" name="w3review" rows="4" wrap="soft" placeholder="whatchu' think about this place?" style="resize: none;width: 100%;font-family: system-ui;padding: 10px;border-radius: 7px; display: none"></textarea>
                 <button id="btnSpawnReviewElement" style="padding: 20px;

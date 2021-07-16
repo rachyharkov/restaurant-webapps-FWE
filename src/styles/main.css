@@ -149,7 +149,7 @@ body main {
     border-radius: 10px;
     background-color: #d72323;
     color: white;
-    padding: 6px 12px;
+    padding: 0.4em 0.5em;
     position: absolute;
     right: 0px;
 }

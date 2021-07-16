@@ -4,7 +4,7 @@ const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjpeg = require('imagemin-mozjpeg')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const path = require('path')
 
 module.exports = {
@@ -40,8 +40,8 @@ module.exports = {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
-            ignore: ['**/images/heros/**'], // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
-          },
+            ignore: ['**/images/heros/**'] // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+          }
         }
       ]
     }),
@@ -75,7 +75,10 @@ module.exports = {
         })
       ]
     }),
-    // new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false
+    })
   ],
   optimization: {
     splitChunks: {
@@ -98,6 +101,6 @@ module.exports = {
           reuseExistingChunk: true
         }
       }
-    } 
+    }
   }
 }

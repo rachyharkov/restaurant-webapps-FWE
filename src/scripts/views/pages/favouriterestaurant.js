@@ -23,7 +23,7 @@ const FavoriteRestaurant = {
     restaurantsListContainer.innerHTML = ''
     // eslint-disable-next-line eqeqeq
     let errorMessage, errorImage
-    if (favoritedRestaurants == '') {
+    if (favoritedRestaurants === '') {
       errorImage = 'toasteruwu'
       errorMessage = 'We think you should add some of your favorite restaurant here, or make bread toast perhaps?'
       restaurantsListContainer.innerHTML = createErrorElement(errorMessage, errorImage)

@@ -99,8 +99,8 @@ const DetailRestaurant = {
         element.addEventListener('click', buttonDetailClick)
       })
 
-      var lazy = function lazy() {
-        document.addEventListener('lazyloaded', function (e)  {
+      const lazy = function lazy () {
+        document.addEventListener('lazyloaded', function (e) {
           // e.target.parentNode.classList.add('image-loaded')
           document.querySelector('.restaurant-info-header').classList.remove('loading')
         })
